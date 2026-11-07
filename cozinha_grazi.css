@@ -1,0 +1,807 @@
+/* ============================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   MENU DE NAVEGAÇÃO
+   ============================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar.transparent {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.navbar.transparent .nav-link {
+    color: #fff;
+}
+
+.navbar.transparent .nav-link:hover {
+    color: #d4af7a;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: "Great Vibes", cursive;
+    font-size: 1.8rem;
+    color: #3d550c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar.transparent .nav-logo {
+    color: #fff;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+}
+
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #d4af7a;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #3d550c;
+}
+
+/* Botão Mobile Menu */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar.transparent .mobile-menu-toggle span {
+    background-color: #fff;
+}
+
+/* ============================================
+   SEÇÃO HERO
+   ============================================ */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    padding: 40px;
+}
+
+h1 {
+    font-family: "Great Vibes", cursive;
+    color: #fff;
+    margin: 0;
+    font-size: 12em;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.subtitulo {
+    font-family: "Old Standard TT", serif;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3em;
+    text-align: center;
+}
+
+.hero-button {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/* ============================================
+   SEÇÃO ABOUT
+   ============================================ */
+.about {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.about-content {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {   
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.section-number {
+    display: block;
+    font-size: 3rem;
+    color: #d4af7a;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.quote {
+    font-style: italic;
+    border-left: 4px solid #d4af7a;
+    padding-left: 20px;
+    margin: 30px 0;
+}
+
+.about-description {
+    margin-bottom: 20px;
+    color: #666;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* ============================================
+   SEÇÃO PRODUCTS - NOSSOS SABORES
+   ============================================ */
+
+.products {
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+.section-title-center {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.products-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    color: #666;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.product-card {
+    text-align: center;
+}
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 300px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-name {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.product-description {
+    font-style: italic;
+    color: #666;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+.cta-button {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 60px; 
+    padding: 15px 20px;
+    background-color: #3d550c;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #c49a5f;
+}
+
+/* ============================================
+   SEÇÃO QUOTE - CITAÇÃO INSPIRADORA
+   ============================================ */
+
+.quote-section {
+    position: relative;
+    height: 400px;
+    background-image: url('quote-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.main-quote {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    max-width: 900px;
+    line-height: 1.8;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* ============================================
+   SEÇÃO CONTACT
+   ============================================ */
+.contact {
+    padding: 100px 0;
+    background-color: #f9f9f9;
+}
+
+.contact-content {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.contact-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-item {
+    margin-bottom: 30px;
+}
+
+.contact-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact-link {
+    color: #3d550c;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #d4af7a;
+}
+
+.contact-text {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   FOOTER - RODAPÉ
+   ============================================ */
+
+.footer {
+    background-color: #3d550c;
+    color: #fff;
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-nav {
+    margin-bottom: 20px;
+}
+
+.footer-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #d4af7a;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.social-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #d4af7a;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+.footer-credits {
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.developer-link {
+    color: #d4af7a;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.developer-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* ============================================
+   RESPONSIVIDADE - TABLETS
+   ============================================ */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 8em;
+    }
+    
+    .subtitulo {
+        font-size: 2.2em;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-title-center {
+        font-size: 2rem;
+    }
+    
+    .nav-menu {
+        gap: 20px;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
+   RESPONSIVIDADE - MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Menu Mobile */
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 20px;
+        transition: left 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-link {
+        color: #333;
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .navbar.transparent .nav-menu {
+        background-color: rgba(255, 255, 255, 0.98);
+    }
+    
+    .navbar.transparent .nav-menu .nav-link {
+        color: #333;
+    }
+    
+    .nav-logo {
+        font-size: 1.5rem;
+    }
+    
+    /* Hero Section Mobile */
+    .hero {
+        min-height: 500px;
+        height: 80vh;
+    }
+    
+    h1 {
+        font-size: 4.5em;
+        margin-top: 20px;
+    }
+    
+    .subtitulo {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+    
+    .hero-button {
+        bottom: 30px;
+        padding: 12px 25px;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+    
+    /* About Section Mobile */
+    .about {
+        padding: 60px 0;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .about-text {
+        order: 2;
+    }
+    
+    .about-image {
+        order: 1;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-number {
+        font-size: 2rem;
+    }
+    
+    .quote {
+        text-align: left;
+        margin: 20px 0;
+        padding-left: 15px;
+    }
+    
+    .about-description {
+        text-align: left;
+    }
+    
+    /* Products Section Mobile */
+    .products {
+        padding: 60px 0;
+    }
+    
+    .section-title-center {
+        font-size: 1.8rem;
+    }
+    
+    .products-intro {
+        margin: 0 auto 40px;
+        font-size: 1rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .product-image {
+        height: 250px;
+    }
+    
+    .product-name {
+        font-size: 1.5rem;
+        bottom: 15px;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 40px;
+        padding: 15px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Quote Section Mobile */
+    .quote-section {
+        height: auto;
+        min-height: 300px;
+        background-attachment: scroll;
+    }
+    
+    .quote-overlay {
+        padding: 40px 20px;
+    }
+    
+    .main-quote {
+        font-size: 1.3rem;
+        line-height: 1.6;
+    }
+    
+    /* Contact Section Mobile */
+    .contact {
+        padding: 60px 0;
+    }
+    
+    .contact-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .contact-image {
+        order: 1;
+    }
+    
+    .contact-info {
+        order: 2;
+    }
+    
+    .contact-item {
+        margin-bottom: 25px;
+    }
+    
+    .contact-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .contact-link,
+    .contact-text {
+        font-size: 1rem;
+    }
+    
+    /* Footer Mobile */
+    .footer {
+        padding: 30px 0 20px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .footer-nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .social-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .footer-bottom {
+        font-size: 0.85rem;
+    }
+}
+
+/* ============================================
+   RESPONSIVIDADE - MOBILE PEQUENO
+   ============================================ */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 3.5em;
+    }
+    
+    .subtitulo {
+        font-size: 1.2em;
+    }
+    
+    .hero-button {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+    
+    .section-title,
+    .section-title-center {
+        font-size: 1.5rem;
+    }
+    
+    .product-image {
+        height: 200px;
+    }
+    
+    .main-quote {
+        font-size: 1.1rem;
+    }
+    
+    .about-description {
+        font-size: 0.95rem;
+    }
+}
